@@ -35,6 +35,13 @@ export class UserInfoService {
     return result;
   }
 
+  async updateDarkMode(id: String, darkMode: number) {
+    const result = await this.userInfoModel.findByIdAndUpdate(id, {
+      isDarkMode: darkMode,
+    });
+    return result;
+  }
+
   //   async updateUsername(newUsername: UpdateUsernameDto, id: string) {
   //     const result = await this.userInfoModel.findOneAndUpdate(
   //       { userId: id },

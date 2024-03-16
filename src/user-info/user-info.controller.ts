@@ -28,6 +28,14 @@ export class UserInfoController {
     private readonly storageService: StorageService,
   ) {}
 
+  @UseGuards(JwtAuthGuard)
+  @Put('update-darkmode')
+  async updateDarkMode(@Request() req, @Body('darkMode') darkMode: number) {
+    const { id } = req.user;
+    const result = await this.userInfoService.updateDarkMode(id, darkMode);
+    return result;
+  }
+
   // @UseGuards(JwtAuthGuard)
   // @Put('update-username')
   // async updateUsername(

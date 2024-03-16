@@ -7,7 +7,6 @@ export type UserInfoDocumnet = HydratedDocument<UserInfo>;
 export enum SexTypes {
   male = 'male',
   female = 'female',
-  another = 'another',
 }
 
 export enum allowTypes {
@@ -17,9 +16,9 @@ export enum allowTypes {
 }
 
 export enum darkMode {
-  automatic = 0,
-  on = 1,
-  off = 2,
+  on = 0,
+  off = 1,
+  automatic = 2,
 }
 
 @Schema({ timestamps: true })
